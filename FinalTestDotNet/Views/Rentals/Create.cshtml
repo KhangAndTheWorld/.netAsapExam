@@ -1,0 +1,66 @@
+@model FinalTestDotNet.Models.Rentals
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Rental</h1>
+<h4>Rentals</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Create" class="p-4 shadow-sm bg-light rounded">
+            <h5 class="mb-4 text-center">Rental Information</h5>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <!-- Customer ID -->
+            <div class="form-group mb-3">
+                <label asp-for="CustomerID" class="form-label fw-bold">Customer ID</label>
+                <input asp-for="CustomerID" class="form-control" placeholder="Enter customer ID" />
+                <span asp-validation-for="CustomerID" class="text-danger"></span>
+            </div>
+
+            <!-- Rental Date -->
+            <div class="form-group mb-3">
+                <label asp-for="RentalDate" class="form-label fw-bold">Rental Date</label>
+                <input asp-for="RentalDate" class="form-control" type="date" />
+                <span asp-validation-for="RentalDate" class="text-danger"></span>
+            </div>
+
+            <!-- Return Date -->
+            <div class="form-group mb-3">
+                <label asp-for="ReturnDate" class="form-label fw-bold">Return Date</label>
+                <input asp-for="ReturnDate" class="form-control" type="date" />
+                <span asp-validation-for="ReturnDate" class="text-danger"></span>
+            </div>
+
+            <!-- Status -->
+            <div class="form-group mb-3">
+                <label asp-for="Status" class="form-label fw-bold">Status</label>
+                <select asp-for="Status" class="form-control">
+                    <option value="">Select Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Canceled">Canceled</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <!-- Quantity -->
+            <div class="form-group mb-3">
+                <label for="Quantity" class="form-label fw-bold">Quantity</label>
+                <input id="Quantity" name="Quantity" type="number" min="1" class="form-control" placeholder="Enter quantity" />
+                <span class="text-danger" asp-validation-for="Quantity"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+                <input type="submit" value="Create Rental" class="btn btn-primary btn-lg" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-3 text-center">
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

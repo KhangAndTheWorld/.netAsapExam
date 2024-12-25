@@ -1,0 +1,25 @@
+@model FinalTestDotNet.Models.Customers
+
+<form asp-action="Create" method="post" class="p-4 shadow-sm bg-light rounded">
+    <h2 class="mb-4 text-center">Register</h2>
+
+    <!-- Full Name -->
+    <div class="form-group mb-3">
+        <label asp-for="FullName" class="form-label fw-bold">Full Name</label>
+        <input asp-for="FullName" class="form-control" placeholder="Enter your full name" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group mb-3">
+        <label asp-for="PhoneNumber" class="form-label fw-bold">Phone Number</label>
+        <input asp-for="PhoneNumber" class="form-control" placeholder="Enter your phone number" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+    </div>
+</form>
+
